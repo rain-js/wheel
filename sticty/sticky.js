@@ -13,17 +13,15 @@ class Sticky {
 	}
 
 	listenToScroll() {
-		var that = this
-
-		$(window).on('scroll', function() {
-			console.log(that.topOffset)
-			if (window.scrollY + that.topOffset > that.eleOffset.top) {
-				that.$element.addClass('sticky')
-				that.$element.css({
-					top: that.topOffset
+		$(window).on('scroll', () => {
+			console.log(this.topOffset)
+			if (window.scrollY + this.topOffset > this.eleOffset.top) {
+				this.$element.addClass('sticky')
+				this.$element.css({
+					top: this.topOffset
 				})
 			} else {
-				that.$element.removeClass('sticky')
+				this.$element.removeClass('sticky')
 			}
 		})
 	}
