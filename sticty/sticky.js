@@ -28,9 +28,3 @@ class Sticky {
 		})
 	}
 }
-
-$(document).ready(function() {
-	new Sticky('#topbar')
-	new Sticky('.button1', 80)
-	new Sticky('.button2', 150)
-})

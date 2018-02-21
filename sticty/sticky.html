@@ -16,11 +16,11 @@
 		}
 		.para {
 			height: 1200px;
+			border: 2px solid red;
 		}
 		.sticky {
 			position: fixed;
 			top: 0;
-			left: 0;
 			/*opacity: 0.7;*/
 		}
 	</style>
@@ -52,5 +52,12 @@
 	
 	<script src='../jquery-3.3.1.js'></script>
 	<script src="sticky.js"></script>
+	<script>
+		$(document).ready(function() {
+			new Sticky('#topbar')
+			new Sticky('.button1', 80)
+			new Sticky('.button2', 150)
+		})
+	</script>
 </body>
 </html>
