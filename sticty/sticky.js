@@ -1,7 +1,9 @@
 class Sticky {
-	constructor(selector, n) {
+	constructor(selector, options) {
 		this.$element = $(selector)
-		this.topOffset = n || 0
+		this.options = options || {}
+		this.topOffset = this.options.topSpacing || 0
+		this.className = this.options.className || ''
 		this.eleOffset = this.$element.offset()
 		this.addPlaceHolder()
 		this.listenToScroll()
@@ -14,14 +16,16 @@ class Sticky {
 
 	listenToScroll() {
 		$(window).on('scroll', () => {
-			console.log(this.topOffset)
+			// console.log(this.topOffset)
 			if (window.scrollY + this.topOffset > this.eleOffset.top) {
 				this.$element.addClass('sticky')
+				this.$element.addClass(this.className)
 				this.$element.css({
 					top: this.topOffset
 				})
 			} else {
 				this.$element.removeClass('sticky')
+				this.$element.removeClass(this.className)
 			}
 		})
 	}
