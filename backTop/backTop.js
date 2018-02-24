@@ -1,7 +1,7 @@
 class BackTop {
 	constructor(selector, visibilityHeight) {
 		this.$element = $(selector)
-		this.visibilityHeight = visibilityHeight
+		this.visibilityHeight = visibilityHeight || $(window).height()
 		this.eleOffset = this.$element.offset()
 
 		this.init()
